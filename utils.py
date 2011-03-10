@@ -20,13 +20,3 @@ def base62_to_int(s):
         num += ALPHANUM.index(char) * (62 ** power)
         power -= 1
     return num
-
-def is_mpq(f):
-    """Check if file is an MPQ Archive"""
-    magic = f.read(4)
-    f.seek(0)
-    if magic == 'MPQ\x1a' or magic == 'MPQ\x1b':
-        return True
-
-    return False
-
